@@ -9,21 +9,33 @@
   </head>
   <body>
     <!--user must be able to click this and be taken to a high scores page-->
-    <nav>highscore</nav>
+    <nav>highscores</nav>
 
     <!--timer -->
-    <div><span id="timer">10</span> seconds left</div>
+   <span><span id="timer">10</span> seconds left</span>
+    <section id="start-page">
+      <h1>Math Quiz</h1>
+      <!--//code quiz description... timed quiz blah blah blah-->
+      <h2>
+        Try to answer the following questions within the time limit. Good luck!
+      </h2>
 
-    <h1>Math Quiz</h1>
-    <!--//code quiz description... timed quiz blah blah blah-->
-    <h2>
-      Try to answer the following questions within the time limit. Good luck!
-    </h2>
+      <!--//button to start the quiz-->
 
-    <!--//button to start the quiz-->
+      <button id="start-btn">Start Quiz</button>
+    </section>
 
-    <button id="start-btn">Start Quiz</button>
+    <div id="quiz-container" style="display: none">
+      <h2 id="question"></h2>
+      <ol id="options"></0l>
+    </div>
+
+    <div id="enter-name" style="display: none;">
+      
+
+    </div>
 
     <script src="./assets/css/js/script.js"></script>
   </body>
 </html>
+ 
