@@ -15,7 +15,7 @@ var score = document.getElementById("score");
 //helper functions
 
 function startTimer() {
-  var timeLeft = 10;
+  var timeLeft = 100;
   var interval = setInterval(function () {
     timeLeft--;
     timerEl.textContent = timeLeft;
@@ -38,15 +38,15 @@ var questions = [
     options: ["20", "12", "200"],
   },
   {
-    question: "what is 3 cubed?",
+    question: "What is 3 cubed?",
     options: ["27", "6", "9"],
   },
   {
-    question: "how many sides does a triangle have?",
+    question: "How many sides does a triangle have?",
     options: ["3", "6", "4"],
   },
   {
-    question: "complete the pattern: 25,26,28,31,35,_ ",
+    question: "Complete the pattern: 25,26,28,31,35,_ ",
     options: ["40", "36", "38"],
   },
 ];
@@ -69,6 +69,7 @@ function displayQuestion() {
   });
 }
 
+//this function starts the quiz
 function startQuiz() {
   //console.log("button works.game will start");
   // pressing this button will take user to the quiz questions
@@ -80,6 +81,7 @@ function startQuiz() {
   // questions pop up
 }
 
+//this handles the options
 function handleOptionSelection() {
   var selectedOption = this.textContent;
 
@@ -91,6 +93,7 @@ function handleOptionSelection() {
     console.log(quizPoints);
   } else {
     console.log("wrong");
+    // timeLeft = timeLeft - 10;
   }
   currentQuestionIndex++;
   if (currentQuestionIndex === questions.length) {
@@ -101,6 +104,16 @@ function handleOptionSelection() {
   } else {
     displayQuestion();
   }
+}
+
+//gets submitted name at end of quiz
+function getName() {
+  var name = document.getElementById("nameInput").value;
+  console.log(name);
+  document.getElementById("quiz-end").style.display = "none";
+  document.getElementById("highscores").style.display = "block";
+  nameValue.innerHTML = name;
+  scoreValue.innerHTML = quizPoints * 25;
 }
 
 //user interactions

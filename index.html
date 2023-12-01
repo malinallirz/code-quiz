@@ -12,7 +12,7 @@
     <nav>highscores</nav>
 
     <!--timer -->
-   <span><span id="timer">10</span> seconds left</span>
+   <span><span id="timer">100</span> seconds left</span>
     <section id="start-page">
       <h1>Math Quiz</h1>
       <!--//code quiz description... timed quiz blah blah blah-->
@@ -32,9 +32,14 @@
 
     <div id="quiz-end" style="display: none">
 
-      <h2>your score is <span id="score"></span> </span></h2>
+      <h2>Your score is <span id="score"></span> </span></h2>
       <input type="text" id="nameInput" placeholder="Enter your name">
+      <button onclick="getName()">Submit</button>
 
+    </div>
+    <div id="highscores" style="display: none;">
+      <h2>Highscores</h2>
+      <p><span id="nameValue">:</span> <span id="scoreValue"></span></p>
     </div>
 
     <script src="./assets/css/js/script.js"></script>

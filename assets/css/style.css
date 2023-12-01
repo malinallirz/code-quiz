@@ -1,0 +1,24 @@
+#start-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+
+#start-btn{
+   padding: 11px 20px;
+    border-radius: 20px;
+    color: white;
+    background: rgb(167, 84, 234); 
+    border: solid 1px rgb(167, 84, 234);
+}
+
+/*#quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
