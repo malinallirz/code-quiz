@@ -7,6 +7,11 @@ var startbtn = document.querySelector("#start-btn");
 var timerEl = document.querySelector("#timer");
 
 var timerInterval;
+
+var quizPoints = 0;
+
+var score = document.getElementById("score");
+
 //helper functions
 
 function startTimer() {
@@ -19,6 +24,8 @@ function startTimer() {
       //stop timer
       clearInterval(interval);
       document.getElementById("quiz-container").style.display = "none";
+      document.getElementById("quiz-end").style.display = "block";
+      score.innerHTML = quizPoints * 25;
     }
   }, 1000);
   return interval;
@@ -72,6 +79,7 @@ function startQuiz() {
   displayQuestion();
   // questions pop up
 }
+
 function handleOptionSelection() {
   var selectedOption = this.textContent;
 
@@ -79,12 +87,17 @@ function handleOptionSelection() {
   var answer = question.options[0];
   if (selectedOption === answer) {
     console.log("correct");
+    quizPoints++;
+    console.log(quizPoints);
   } else {
     console.log("wrong");
   }
   currentQuestionIndex++;
   if (currentQuestionIndex === questions.length) {
     console.log("complete");
+    document.getElementById("quiz-container").style.display = "none";
+    document.getElementById("quiz-end").style.display = "block";
+    score.innerHTML = quizPoints * 25;
   } else {
     displayQuestion();
   }
